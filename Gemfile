@@ -15,7 +15,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
-
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -24,7 +23,7 @@ group :development do
 end
 group :production do
   gem 'pg', '0.17.1'
-  gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor'
 end
 group :test do
   gem 'capybara', '>= 2.15'
