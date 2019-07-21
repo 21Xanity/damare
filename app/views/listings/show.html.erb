@@ -1,0 +1,28 @@
+<div class="topbar">
+  <div class="container">
+    <div class="vertical-center">
+      <%= link_to 'rubyslist', root_path %> > <%= link_to @listing.category.name, category_path(@listing.category) %> > <%= @listing.subcategory.name %> > <%= @listing.title %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div>
+    <button type="button">reply</button>
+    <p>posted: <%= time_ago_in_words(@listing.created_at) %></p>
+    <h1 class="listing-header"><%= @listing.title %></h1>
+    <div class="box">
+      <% if @listing.user == current_user %>
+        <p><%= link_to 'edit', edit_listing_path %></p>
+        <p><%= link_to 'delete', @listing, data: {confirm: "Are you sure you want to delete this listing?"}, method: :delete %></p>
+      <% end %>
+    </div>
+    <p><%= @listing.description %></p>
+    <% if @listing.image.attached? %>
+      <image src="<%=(url_for(@listing.image))%>">
+    <% end %>
+  </div>
+  <footer>
+    <p>post id: <%= @listing.id %></p>
+    <p>posted: <%= time_ago_in_words(@listing.created_at) %></p>
+  </footer>
+</div>
