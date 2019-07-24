@@ -2,4 +2,7 @@
   "name": "rubyslist",
   "private": true,
   "dependencies": {}
+},
+"scripts": {
+    "start": "node application.js"
 }
